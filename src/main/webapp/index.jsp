@@ -1,28 +1,21 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: vinoses
-  Date: 6/22/2019
-  Time: 3:46 PM
-  To change this template use File | Settings | File Templates.
---%>
+<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Bootsrap here DWR there</title>
+  <title>Bootstrap here DWR there</title>
   <!-- JQuery -->
-  <script type='text/javascript' src="/BootstrapDwrJava_war_exploded/resources/scripts/jquery-3.4.1.js"></script>
+  <script type="text/javascript" src="/BootstrapDwrJava_war_exploded/resources/scripts/jquery-3.4.1.js"></script>
   <!-- Bootstrap Scripts -->
-  <script type='text/javascript' src='/BootstrapDwrJava_war_exploded/resources/scripts/popper.js'></script>
-  <script type='text/javascript' src='/BootstrapDwrJava_war_exploded/resources/scripts/bootstrap.js'></script>
+  <script type="text/javascript" src="/BootstrapDwrJava_war_exploded/resources/scripts/popper.js"></script>
+  <script type="text/javascript" src="/BootstrapDwrJava_war_exploded/resources/scripts/bootstrap.js"></script>
   <!-- DWR Scripts -->
-  <script type='text/javascript' src='/BootstrapDwrJava_war_exploded/dwr/util.js'></script>
-  <script type='text/javascript' src='/BootstrapDwrJava_war_exploded/dwr/engine.js'></script>
+  <script type="text/javascript" src="/BootstrapDwrJava_war_exploded/dwr/engine.js"></script>
   <!-- dwr created javascript from java -->
   <script type="text/javascript" src="/BootstrapDwrJava_war_exploded/dwr/interface/datahandler.js"></script>
   <script type="text/javascript" src="/BootstrapDwrJava_war_exploded/dwr/interface/JavaDate.js"></script>
   <!-- page specific behavior -->
-  <script type='text/javascript' src='/BootstrapDwrJava_war_exploded/resources/scripts/index.js'></script>
+  <script type='text/javascript' src="/BootstrapDwrJava_war_exploded/resources/scripts/index.js"></script>
   <!-- Css from Bootstrap - font-awesome - overrides in style -->
   <link rel="stylesheet" type="text/css" href="/BootstrapDwrJava_war_exploded/resources/css/html5-boilerplate.css" />
   <link rel="stylesheet" type="text/css" href="/BootstrapDwrJava_war_exploded/resources/css/bootstrap.css" />
@@ -30,6 +23,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="/BootstrapDwrJava_war_exploded/resources/css/style.css" />
 
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
 
 
 </head>
@@ -85,27 +80,27 @@
   </div>
   <div class="col">
     <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-      View <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a tabindex="-1" href="#">Toolbar</a></li>
-      <li><a tabindex="-1" href="#">Sidebar</a></li>
-      <li class="dropdown-submenu">
-        <a class="test" tabindex="-1" href="#">Page Style <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a tabindex="-1" href="#">Style 1</a></li>
-          <li><a tabindex="-1" href="#">Style 2</a></li>
-          <li class="dropdown-submenu">
-            <a class="test" href="#">Alternatives <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Style 3</a></li>
-              <li><a href="#">Style 4</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+        View <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a tabindex="-1" href="#">Toolbar</a></li>
+        <li><a tabindex="-1" href="#">Sidebar</a></li>
+        <li class="dropdown-submenu">
+          <a class="test" tabindex="-1" href="#">Page Style <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a tabindex="-1" href="#">Style 1</a></li>
+            <li><a tabindex="-1" href="#">Style 2</a></li>
+            <li class="dropdown-submenu">
+              <a class="test" href="#">Alternatives <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Style 3</a></li>
+                <li><a href="#">Style 4</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="col">
     <div class="dropdown">
@@ -194,7 +189,53 @@
     </div>
   </div>
 </header>
-<body>
 
+<body>
+<div class="row" style="margin : 10%;">
+  <div class="col-md-12 column sortable">
+    <table id='table' class="display table" data-page-length="3">
+      <thead>
+      <tr class="row"><span class="caret"></span>
+        <th class="col">#</th>
+        <th class="col">Product</th>
+        <th class="col">Payment Taken</th>
+        <th class="col">Status</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="row">
+        <td class="col">1</td>
+        <td class="col">TB - Monthly</td>
+        <td class="col">01/04/2012</td>
+        <td class="col">Default</td>
+      </tr>
+      <tr class="table-active row">
+        <td class="col">1</td>
+        <td class="col">TB - Monthly</td>
+        <td class="col">01/04/2012</td>
+        <td class="col">Approved</td>
+      </tr>
+      <tr class="row table-success">
+        <td class="col">2</td>
+        <td class="col">TB - Monthly</td>
+        <td class="col">02/04/2012</td>
+        <td class="col">Declined</td>
+      </tr>
+      <tr class="row table-warning">
+        <td class="col">3</td>
+        <td class="col">TB - Monthly</td>
+        <td class="col">03/04/2012</td>
+        <td class="col">Pending</td>
+      </tr>
+      <tr class="row table-danger">
+        <td class="col">4</td>
+        <td class="col">TB - Monthly</td>
+        <td class="col">04/04/2012</td>
+        <td class="col">Call in to confirm</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 </body>
 </html>
